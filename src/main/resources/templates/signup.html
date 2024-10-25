@@ -4,7 +4,36 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+<link rel="stylesheet" th:href="@{/css/renewal.css}" type="text/css">
+<link rel="stylesheet" th:href="@{/css/signup.css}" type="text/css">
+<script src="https://kit.fontawesome.com/93d77b263e.js" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script th:src="@{/js/renewal.js}"></script>
 <body>
-    <div th:fragment="login"></div>
+<div class="wrapper">
+    <header th:replace="~{header :: header}"></header>
+</div>
+    <div class="signup_box">
+        <form th:action="@{/users}" method="post">
+            <input type="hidden" th:name="${_csrf?.parameterName}" th:value="${_csrf?.token}" />
+        <!-- 이메일 입력란 -->
+            <div>
+                <label>Email address</label>
+                <input type="email" name="email" placeholder="이메일을 입력해주세요" required>
+            </div>
+            <!-- 비밀번호 입력란 -->
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="비밀번호를 설정해주세요" required>
+            </div>
+            <!-- 주소 입력란 -->
+            <div>
+                <label>Address</label>
+                <input type="text" name="address" placeholder="주소를 입력해주세요" required>
+            </div>
+            <button type="submit">회원가입 등록 </button>
+        </form>
+    </div>
+    <footer th:replace="~{footer :: footer}"></footer>
 </body>
 </html>

@@ -4,12 +4,18 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Getter
 @NoArgsConstructor
 @Table(name = "users")
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)
@@ -24,15 +30,35 @@ public class User {
     @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "real_name", nullable = false)
-    private String realName;
-
     @Builder
-    public User(String email, String password, String address, String realName) {
+    public User(String email, String password, String address) {
         this.email = email;
         this.password = password;
         this.address = address;
-        this.realName = realName;
     }
-
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        //불변 리스트 ,null허용 안함
+        return List.of(new SimpleGrantedAuthority("user"));
+    }
+    @Override
+    public String getUsername(){
+        return email;
+    }
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isEnabled(){
+        return true;
+    }
 }

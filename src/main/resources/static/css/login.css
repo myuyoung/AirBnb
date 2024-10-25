@@ -1,0 +1,61 @@
+body{
+    background-color: #f5f5dc;
+}
+.secMenu ul li a{
+    color: black !important;
+}
+.wrapper{
+    position: relative;
+    height: 300px;
+}
+form , .login_box{
+    width:100%;
+}
+h2{
+    text-align: center;
+}
+p.service{
+    text-align: center;
+}
+.box{
+    border: 1px solid black;
+    width:50%;
+    height: 300px;
+    text-align: center;
+    align-items: center;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    border-collapse: collapse;
+}
+.login_box .id_box{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.login_box input{
+    border:none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s ease;
+    width: 45%;
+}
+.id_box, .pass_box{
+    width: 80%;
+    margin: 10px auto;
+}
+.login_box p{
+    font-size: 1.3em;
+}
+.login_box input:focus{
+    border-bottom: 2px solid #007bff;
+    outline: none;
+}
+.login_box .pass_box{
+    display:flex;
+    flex-flow:row;
+    justify-content: space-between;
+}
+input{
+    padding: 10px 20px;
+}

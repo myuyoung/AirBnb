@@ -5,6 +5,133 @@
     <title>Title</title>
 </head>
 <body>
-    <header></header>
+<header class="header" th:fragment="header" >
+    <div class="centerBox">
+        <!-- 실선 위의 것들  -->
+        <div class="Hmenu">
+            <div class="headMenu">
+                <div>
+                    <a href="#" class="menu_btn">
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"viewBox="0 0 512 512" ><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+                        </p>
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></a>
+                </div>
+                <div class="logo">
+                    <a th:href="@{/}">
+                        <img src="/img/logo.png" alt="에어비앤비 로고">
+                    </a>
+                </div>
+                <div class="login">
+                    <a th:href="@{/login}">
+                        <p>로그인</p>
+                    </a>
+                    <a th:href="@{/signup}">
+                        <p>회원가입</p>
+                    </a>
+                </div>
+                <div class="ticket mobile">
+                    <a href="#">
+                        <img src="/img/ticket.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="naviMenu">
+                <div class="centerBox">
+                    <p>SITE MAP</p>
+                    <nav>
+                        <ul>
+                            <li><a href="#">숙소</a>
+                                <ul>
+                                    <li><a href="#">여행지 주변 숙소</a></li>
+                                    <li><a href="#">추천 숙소</a></li>
+                                    <li><a href="#">숙소 근처 편의 시설</a></li>
+                                    <li><a href="#">숙소 예약하기</a></li>
+                                    <li><a href="#">할인 중인 숙소</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">체험</a>
+                                <ul>
+                                    <li><a href="#">테마 별 체험</a></li>
+                                    <li><a href="#">시즌 체험</a></li>
+                                    <li><a href="#">지역 별 체험</a></li>
+                                    <li><a href="#">가족과 함께 하는 체험</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">고객문의</a>
+                                <ul>
+                                    <li><a href="#">Q & A</a></li>
+                                    <li><a href="#">예약 문의</a></li>
+                                    <li><a href="#">환불안내</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">혜택</a>
+                                <ul>
+                                    <li><a href="#">멤버십 안내</a></li>
+                                    <li><a href="#">VIP LOUNGE</a></li>
+                                    <li><a href="#">제휴/할인</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">나의 에어비앤비</a>
+                                <ul>
+                                    <li><a href="#">내 정보</a></li>
+                                    <li><a href="#">예약/구매 내역</a></li>
+                                    <li><a href="#">멤버십포인트</a></li>
+                                    <li><a href="#">나의 문의내역</a></li>
+                                    <li><a href="#">회원정보</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">회사 소개</a>
+                                <ul>
+                                    <li><a href="">에어비앤비 소개</a></li>
+                                    <li><a href="#">사회 공헌</a></li>
+                                    <li><a href="#">인재 채용</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- 2차원 메뉴 -->
+            <nav class="secMenu">
+                <ul>
+                    <li><a href="#">여행지</a>
+                        <ul class="active1">
+                            <li><a href="#">여행 주변 숙소</a></li>
+                            <li><a href="#">숙소 편의 시설</a></li>
+                            <li><a href="#">숙소 예약 하기</a></li>
+                            <li><a href="#">할인 중인 숙소</a></li>
+                            <li><a href="#">추천 숙소</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">체험</a>
+                        <ul>
+                            <li><a href="#">테마 별 체험</a></li>
+                            <li><a href="#">시즌 체험</a></li>
+                            <li><a href="#">지역 별체험</a></li>
+                            <li><a href="#">가족과 함께 하는 체험</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">고객문의</a>
+                        <ul>
+                            <li><a href="#">Q & A</a></li>
+                            <li><a href="#">예약 문의</a></li>
+                            <li><a href="#">환불 문의</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="subBg">
+
+    </div>
+    <!-- 모바일 버전 메뉴 바  -->
+
+</header>
 </body>
 </html>

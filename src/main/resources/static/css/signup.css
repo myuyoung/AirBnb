@@ -1,0 +1,45 @@
+body{
+    background-color: #f5f5dc;
+    position: relative;
+    height:100vh;
+}
+.wrapper{
+    position: relative;
+    height: 300px;
+}
+.secMenu ul li a{
+    color: black !important;
+}
+.signup_box{
+    height: 200px;
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+form > div{
+    width: 350px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+form input{
+    width:150px;
+}
+button{
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+footer{
+    position:absolute;
+    bottom: 0;
+}

@@ -6,26 +6,26 @@ spring:
       restart:
         enabled: true
   datasource:
-    url: jdbc:h2:mem:testdb  # 메모리 기반 데이터베이스 사용
-    driver-class-name: org.h2.Driver
-    username: sa  # 기본 사용자명
-    password:  # 기본 비밀번호 없음
+    url: jdbc:mysql://localhost:3306/airbnb
+    username: root
+    password: park
+    driver-class-name: com.mysql.cj.jdbc.Driver
   h2:
     console:
-        enabled: true
+        enabled: false
   jpa:
     #전송 쿼리 확인
     show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
         format_sql: true
     #테이블 생성 후에 data.sql 실행
     defer-datasource-initialization : true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
   thymeleaf:
     cache: false
-#JWT 토큰을 만드는 설정
-jwt:
-  issuer: ajufresh@gmail.com
-  secret_key: test_key
+logging:
+  level:
+    org.springframework.security: DEBUG

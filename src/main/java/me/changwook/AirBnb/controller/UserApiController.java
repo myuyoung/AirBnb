@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserApiController {
     private final UserService userService;
 
-    @PostMapping("/user")
+    @PostMapping("/users")
     public String signup(AddUserRequest request){
         userService.save(request);
-        return "redirect:/renewal";
+        return "redirect:/login";
     }
 }
