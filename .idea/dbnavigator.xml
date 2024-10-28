@@ -17,33 +17,34 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="493a627d-6f29-45e3-b34f-5804a6160161">
-      <console name="Connection" type="STANDARD" schema="airbnb" session="Main"><![CDATA[use mysql;
-
-select * from users;
-
-drop table users;]]></console>
-      <console name="Connection2" type="STANDARD" schema="airbnb" session="Main"><![CDATA[USE airbnb;
-
-
+      <console name="Connection2" type="STANDARD" schema="airbnb" session="Main"><![CDATA[create database airbnb;
+use airbnb;
 
 create table users(
     id bigint not null AUTO_INCREMENT,
-    email varchar(255),
-    password varchar(255),
-    address varchar(255),
+    email varchar(255) unique,
+    password varchar(255) not null,
+    address varchar(255) not null,
     primary key (id)
 );
 
-select * from users;
+create table refresh_token(
+    id bigint not null AUTO_INCREMENT,
+    refresh_token varchar(255) not null,
+    user_id bigint not null,
+    primary key (id)
+);
 
-SHOW PROCESSLIST;]]></console>
+show tables;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="493a627d-6f29-45e3-b34f-5804a6160161" object-ref="consoles/Connection2" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="493a627d-6f29-45e3-b34f-5804a6160161" />
@@ -73,19 +74,19 @@ SHOW PROCESSLIST;]]></console>
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9.0" />
+          <database-version value="8.0" />
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />
           <url-type value="DATABASE" />
-          <host value="localhost" />
+          <host value="awseb-e-mjqecnv6mm-stack-awsebrdsdatabase-rovrmgcruwqc.cvykkocwayft.ap-northeast-2.rds.amazonaws.com" />
           <port value="3306" />
-          <database value="airbnb" />
+          <database value="mysql" />
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
-          <user value="root" />
-          <deprecated-pwd value="cGFyaw==" />
+          <user value="changwook" />
+          <deprecated-pwd value="cmlhaDAyNTg=" />
         </database>
         <properties>
           <auto-commit value="false" />

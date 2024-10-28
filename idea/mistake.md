@@ -4,3 +4,11 @@
 3. 인증,인가 클래스에서 /users라는 템플릿을 따로 허가하지 않아서 회원가입이 되지 않았다.
 4. Spring Security에서는 login.html 인풋 name이 "username" 이라고 해야지만 email로 인식함 
 5. 시큐리티 구성 클래스에서 /renewal로 이동하라는 명령어가 있어서 매핑을 하지 않았는데 이것 때문에 오류가 생겼다 
+6.  "status": 999, "error": "None", "message": "No message available"  -> 이런 오류가 떴었다.
+   1..formLogin(formLogin -> formLogin
+   .loginPage("/login")
+   .defaultSuccessUrl("/renewal",true)
+   .failureUrl("/login?error=true")) 로그인 폼에서  
+   .defaultSuccessUrl("/renewal",true) 이 부분을 true를 추가하니 오류가 생기지 않았다
+7. 토큰 방식으로 로그인 인증 방식으로 채택 할 경우 제일 큰 장점은 서버비용을 줄일 수 있음이다.
+8. 

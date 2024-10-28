@@ -23,14 +23,17 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests(auth -> auth
                         .requestMatchers("/css/**", "/js/**", "/img/**").permitAll()  // 정적 리소스에 대한 접근 허용
-                        .requestMatchers("/", "/renewal", "/login", "/signup","/users").permitAll()
+                        .requestMatchers("/", "/renewal", "/login", "/signup","/users","/logout").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login")
-                        .defaultSuccessUrl("/renewal"))
+                        .defaultSuccessUrl("/renewal",true)
+                        .failureUrl("/login?error=true"))
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login")
-                        .invalidateHttpSession(true))
+                        .logoutUrl("/logout")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID"))
                 .csrf(AbstractHttpConfigurer::disable)
                 .build();
     }

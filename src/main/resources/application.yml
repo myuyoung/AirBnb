@@ -1,22 +1,21 @@
 spring:
+  h2:
+    console:
+      enabled: false
   devtools:
     livereload:
       enabled: true
     remote:
       restart:
         enabled: true
-  datasource:
-    url: jdbc:mysql://localhost:3306/airbnb
-    username: root
-    password: park
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  h2:
-    console:
-        enabled: false
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/airbnb
+#    username: root
+#    password: park
+#    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     #전송 쿼리 확인
     show-sql: true
-    database-platform: org.hibernate.dialect.MySQLDialect
     properties:
       hibernate:
         format_sql: true
@@ -26,6 +25,7 @@ spring:
       ddl-auto: update
   thymeleaf:
     cache: false
-logging:
-  level:
-    org.springframework.security: DEBUG
+#이슈 발급자, 비밀키를 필수로 성정해야 JWT 토큰을 만들 수 있습니다.
+jwt:
+  issuer: ${JWT_ISSUER}
+  secret_key: ${JWT_SECRET_KEY}
