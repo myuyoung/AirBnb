@@ -2,4 +2,4 @@
 
 ## 프로젝트를 진행하면서 발생한 오류와 해결방법을 Study폴더 내부에 TroubleShooting.md에 정리해 보았습니다. 
 
-[MyStudy](https://github.com/myuyoung/AirBnb/edit/main/README.md#:~:text=MyStudy-,TroubleShooting,-.md)
+[TroubleShooting.md](MyStudy/TroubleShooting.md)
