@@ -10,5 +10,4 @@
    .defaultSuccessUrl("/renewal",true)
    .failureUrl("/login?error=true")) 로그인 폼에서  
    .defaultSuccessUrl("/renewal",true) 이 부분을 true를 추가하니 오류가 생기지 않았다
-7. 토큰 방식으로 로그인 인증 방식으로 채택 할 경우 제일 큰 장점은 서버비용을 줄일 수 있음이다.
-8. 
+7.

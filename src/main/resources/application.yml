@@ -1,4 +1,10 @@
 spring:
+  mvc:
+    contentnegotiation:
+      favor-parameter: false
+      favor-path-extension: false
+      media-types:
+        json: application/json
   h2:
     console:
       enabled: false
@@ -8,11 +14,11 @@ spring:
 #    remote:
 #      restart:
 #        enabled: true
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/airbnb
-#    username: root
-#    password: park
-#    driver-class-name: com.mysql.cj.jdbc.Driver
+  datasource:
+    url: jdbc:mysql://localhost:3306/airbnb?serverTimezone=UTC
+    username: root
+    password: riah0258
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     #전송 쿼리 확인
 #    show-sql: true
@@ -29,3 +35,7 @@ spring:
 jwt:
   issuer: ${JWT_ISSUER}
   secret_key: ${JWT_SECRET_KEY}
+naver:
+  map:
+    client-id: ebmr8397d2
+    client-secret: 5ay06F4Ps5UFWcUPwKl8M9H6CxzZO4ARb1CJWhRz

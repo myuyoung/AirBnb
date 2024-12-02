@@ -16,8 +16,8 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="493a627d-6f29-45e3-b34f-5804a6160161">
-      <console name="Connection2" type="STANDARD" schema="airbnb" session="Main"><![CDATA[create database airbnb;
+    <connection id="1a15ff93-5755-4113-81d1-2a096eabe53a">
+      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[create database airbnb;
 use airbnb;
 
 create table users(
@@ -35,6 +35,12 @@ create table refresh_token(
     primary key (id)
 );
 
+INSERT INTO accommodations (name, latitude, longitude, price, rating, reviews_count)
+VALUES 
+('Accommodation 1', 37.5665, 126.9780, 100.00, 4.5, 100),
+('Accommodation 2', 37.5770, 126.9769, 80.00, 4.7, 120),
+('Accommodation 3', 37.5512, 126.9882, 120.00, 4.3, 80);
+
 show tables;]]></console>
     </connection>
   </component>
@@ -42,12 +48,10 @@ show tables;]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="493a627d-6f29-45e3-b34f-5804a6160161" object-ref="consoles/Connection2" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="493a627d-6f29-45e3-b34f-5804a6160161" />
+    <connection id="1a15ff93-5755-4113-81d1-2a096eabe53a" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="493a627d-6f29-45e3-b34f-5804a6160161" dataset="mysql.users" active-filter-id="" />
@@ -56,6 +60,14 @@ show tables;]]></console>
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -68,24 +80,24 @@ show tables;]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="493a627d-6f29-45e3-b34f-5804a6160161" active="true" signed="true">
+      <connection id="1a15ff93-5755-4113-81d1-2a096eabe53a" active="true" signed="true">
         <database>
-          <name value="Connection2" />
+          <name value="Connection" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="8.0" />
+          <database-version value="9.0" />
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />
           <url-type value="DATABASE" />
-          <host value="awseb-e-mjqecnv6mm-stack-awsebrdsdatabase-rovrmgcruwqc.cvykkocwayft.ap-northeast-2.rds.amazonaws.com" />
+          <host value="localhost" />
           <port value="3306" />
           <database value="mysql" />
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />
-          <user value="changwook" />
+          <user value="root" />
           <deprecated-pwd value="cmlhaDAyNTg=" />
         </database>
         <properties>
