@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>에어비앤비</title>
     <link rel="shortcut icon" href="/img/favifafa.png" type="image/icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" th:href="@{/css/renewal.css}" type="text/css">
 </head>
 <body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link rel="stylesheet" th:href="@{/css/renewal.css}" type="text/css">
 <script src="https://kit.fontawesome.com/93d77b263e.js" crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -73,7 +73,7 @@
                 <div class="accommodations centerBox mobile1 swiper mySwiper1">
                     <div class="sliderM swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="sph" >
+                            <div class="sph" data-id="1" data-uri="/img/sph1.jpeg">
                                 <img src="/img/sph1.jpeg" alt="사진1">
                                 <div class="sul">
                                     <p>스코틀랜드의 조용한 숲에서 힐링할 수 있는 숙소, 새 지저귀는 소리와 벌레 우는 소리가 가득한 곳</p>
@@ -145,12 +145,11 @@
             </div>
         <div class="accommodations centerBox pcV">
             <div>
-                <!-- login 페이지가 아니라 다른 페이지로 만들기 ${내가 원하는 숙소사이트 } -->
-                <div class="sph" onclick="window.location.href='/login'"  style="cursor: pointer" >
-                    <img src="/img/sph1.jpeg" alt="사진1">
+                <div class="sph" style="cursor: pointer" data-id="1" data-uri="/img/sph1.jpeg" onclick="viewAccommodation(1)"><!-- onclick="window.location.href='/login'"-->
                     <div class="sul" >
                         <p>스코틀랜드의 조용한 숲에서 힐링할 수 있는 숙소, 새 지저귀는 소리와 벌레 우는 소리가 가득한 곳</p>
                     </div>
+                    <img src="/img/sph1.jpeg" alt="사진1">
                 </div>
                 <div class="heart">
                     <div>
@@ -163,7 +162,8 @@
                 </div>
             </div>
             <div>
-                <div class="sph">
+                <!-- 두번 째 숙소 -->
+                <div class="sph" style="cursor:pointer" data-id="2" data-uri="/img/sph2.jpeg" onclick="viewAccommodation(2)">
                     <img src="/img/sph2.jpeg" alt="사진2">
                     <div class="sul">
                         <p>하와이에서 따사로운 햇살 아래에서 즐기는 수영장, 미슐랭에서 인정받은 셰프의 조식까지 함께 경험 할 수 있는 곳</p>
@@ -180,7 +180,8 @@
                 </div>
             </div>
             <div>
-                <div class="sph">
+                <!-- 세번 째 숙소 -->
+                <div class="sph" style="cursor:pointer" data-id="3" data-uri="/img/sph3.jpeg" onclick="viewAccommodation(3)">
                     <img src="/img/sph3.jpg" alt="사진3">
                     <div class="sul">
                         <p>타이완 최고 부촌에서 경험하는 하이엔드 힐링 스테이션 모든 것이 프리미엄</p>
@@ -197,7 +198,8 @@
                 </div>
             </div>
             <div>
-                <div class="sph">
+                <!-- 네번 쨰 숙소-->
+                <div class="sph" style="cursor:pointer" data-id="4" data-uri="/img/sph4.jpeg" onclick="viewAccommodation(4)">
                     <img src="/img/sph4.jpeg" alt="사진4">
                     <div class="sul">
                         <p>캐나다 케노라에서 힐링과 더불어 다양한 체험까지 할 수 있는 가족과 함께하기 좋은 숙소</p>
@@ -917,5 +919,6 @@
             <img src="/img/mbox_pic.jpeg" alt="가로길이 숙소 이미지">
         </div>
     </div>
+<script src="/js/ViewDetail.js"></script>
 </body>
 </html>

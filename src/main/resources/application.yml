@@ -15,7 +15,7 @@ spring:
 #      restart:
 #        enabled: true
   datasource:
-    url: jdbc:mysql://localhost:3306/airbnb?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/airbnb
     username: root
     password: riah0258
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -28,7 +28,7 @@ spring:
     #테이블 생성 후에 data.sql 실행
     defer-datasource-initialization : true
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
 #  thymeleaf:
 #    cache: false
 #이슈 발급자, 비밀키를 필수로 성정해야 JWT 토큰을 만들 수 있습니다.

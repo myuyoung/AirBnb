@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="/css/renewal.css" type="text/css">
+
+</head>
+<body>
+<div class="wrapper">
+    <header class="header" th:replace="~{header :: header}"></header>
+    <div class="container">
+        <h1 th:text="${accommodation.name}">숙소이름</h1>
+        <img th:src="${accommodation.imageUrl}" alt="숙소 이미지" />
+        <p>가격: <span th:text="${accommodation.price}"></span>원</p>
+        <p>평점: <span th:text="${accommodation.rating}"></span>/5</p>
+        <p>리뷰 수: <span th:text="${accommodation.reviewsCount}"></span></p>
+
+        <!-- 지도 렌더링-->
+        <div id="map" style="width:100%; height: 500px;"></div>
+    </div>
+    <footer class="footer" th:replace="~{footer :: footer}"></footer>
+</div>
+<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ebmr8397d2"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/renewal.js"></script>
+<script src="/js/accommodationJS.js"></script>
+</body>
+</html>

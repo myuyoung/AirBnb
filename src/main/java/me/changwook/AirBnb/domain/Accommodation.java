@@ -11,6 +11,7 @@ public class Accommodation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String imageUrl;
     private Double latitude;
     private Double longitude;
     private Double price;

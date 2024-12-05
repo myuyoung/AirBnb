@@ -10,4 +10,8 @@
    .defaultSuccessUrl("/renewal",true)
    .failureUrl("/login?error=true")) 로그인 폼에서  
    .defaultSuccessUrl("/renewal",true) 이 부분을 true를 추가하니 오류가 생기지 않았다
-7.
+7. JavaScript를 외부에서 불러오는 경우 JavaScript내부에서 타임리프 문법을 사용할 수가 없다
+ `예) : const latitude =[[${accommodations.latitude}]];`
+   그래서 나는 html렌더링이 완료된 후 JavaScript 파일이 실행되도록 설정하는 방법과 비동기방법으로 네이버지도에 경도와 위도 정보를 넣을 것을 생각했다
+   html렌더링 과정에 div태그에 th:data-id=${accommodations.id}로 넣을 수도 있으나 데이터를 가공하고 처리하는 과정을 명확하게 하기 위해서는 후자의 방법을 선택하기로 했음.
+8. 

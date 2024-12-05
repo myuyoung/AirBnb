@@ -16,32 +16,12 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="1a15ff93-5755-4113-81d1-2a096eabe53a">
-      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[create database airbnb;
-use airbnb;
+    <connection id="9198e57c-3245-4af5-883f-939841d56332">
+      <console name="Connection" type="STANDARD" schema="airbnb" session="Main"><![CDATA[show tables;
 
-create table users(
-    id bigint not null AUTO_INCREMENT,
-    email varchar(255) unique,
-    password varchar(255) not null,
-    address varchar(255) not null,
-    primary key (id)
-);
+select * from users;
 
-create table refresh_token(
-    id bigint not null AUTO_INCREMENT,
-    refresh_token varchar(255) not null,
-    user_id bigint not null,
-    primary key (id)
-);
-
-INSERT INTO accommodations (name, latitude, longitude, price, rating, reviews_count)
-VALUES 
-('Accommodation 1', 37.5665, 126.9780, 100.00, 4.5, 100),
-('Accommodation 2', 37.5770, 126.9769, 80.00, 4.7, 120),
-('Accommodation 3', 37.5512, 126.9882, 120.00, 4.3, 80);
-
-show tables;]]></console>
+use airbnb;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -51,7 +31,7 @@ show tables;]]></console>
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="1a15ff93-5755-4113-81d1-2a096eabe53a" />
+    <connection id="9198e57c-3245-4af5-883f-939841d56332" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="493a627d-6f29-45e3-b34f-5804a6160161" dataset="mysql.users" active-filter-id="" />
@@ -60,6 +40,10 @@ show tables;]]></console>
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/db/8fb78d1d-9307-484e-ad15-f93ad8e90538/console.sql" connection-id="9198e57c-3245-4af5-883f-939841d56332" session-id="MAIN" current-schema="airbnb" />
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/data.sql" connection-id="9198e57c-3245-4af5-883f-939841d56332" session-id="MAIN" current-schema="airbnb" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -73,14 +57,14 @@ show tables;]]></console>
     <last-used-operator value="EQUAL" />
     <filters />
   </component>
-  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="false">
     <recently-used-interfaces>
       <mapping database-type="MYSQL" interface-id="DEFAULT" />
     </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="1a15ff93-5755-4113-81d1-2a096eabe53a" active="true" signed="true">
+      <connection id="9198e57c-3245-4af5-883f-939841d56332" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -93,7 +77,7 @@ show tables;]]></console>
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="3306" />
-          <database value="mysql" />
+          <database value="airbnb" />
           <tns-folder value="" />
           <tns-profile value="" />
           <type value="USER_PASSWORD" />

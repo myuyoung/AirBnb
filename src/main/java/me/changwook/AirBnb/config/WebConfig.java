@@ -3,7 +3,6 @@ package me.changwook.AirBnb.config;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.io.ObjectInputFilter;
 
 public class WebConfig implements WebMvcConfigurer {
     @Override

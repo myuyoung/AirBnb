@@ -45,6 +45,7 @@ dependencies {
     testImplementation 'net.datafaker:datafaker:1.9.0'
     implementation 'com.mysql:mysql-connector-j'
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
 }
 jar {
     enabled = false
